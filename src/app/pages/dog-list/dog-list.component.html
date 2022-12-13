@@ -1,15 +1,10 @@
-<h1>dog-list works!</h1>
 
-<ul class="list-container">
+<ul class="list-container">  
+
+   <div *ngFor="let dog of dogList">
     
-    <mat-card>
-        <mat-card-content>Simple card</mat-card-content>
-    </mat-card>
+    <app-dog-item [dog]="dog"> </app-dog-item>
 
-    <li class="item"> Shtizu</li>
-    <li class="item"> Pastor Alemão</li>
-    <li class="item"> Poodle</li>
-    <li class="item">SRD</li>
-    <li class="item">São Bernardo</li>
-    <li class="item">Pit Bull</li>
+   </div>
+
 </ul>

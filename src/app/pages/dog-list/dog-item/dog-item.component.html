@@ -1,0 +1,10 @@
+<mat-card>
+    <mat-card-content class="dog-container">
+        <img *ngIf="dog.imgURL" class="dog-img" [src]="dog.imgURL" alt ="">
+        <img *ngIf="!dog.imgURL" class="dog-img" src = "https://www.ferramentastenace.com.br/wp-content/uploads/2017/11/sem-foto.jpg">
+        <span> {{ dog.name }}</span>
+        <button class = "dog-button" (click)="showAlert(dog.race + dog.gender + dog.age)"> Mais informações</button>
+    </mat-card-content>
+
+
+   </mat-card>
