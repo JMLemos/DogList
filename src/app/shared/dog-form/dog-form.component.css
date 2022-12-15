@@ -1,0 +1,17 @@
+.dog-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px;
+    min-width: 500px;
+  }
+  
+  .full-width {
+    width: 50%;
+  }
+
+  .dog-button{
+    color:rgb(0, 0, 0);
+    background-color: rgb(168, 143, 3);
+    width: 50%;
+  }

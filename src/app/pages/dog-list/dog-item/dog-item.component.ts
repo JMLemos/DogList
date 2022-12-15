@@ -1,4 +1,7 @@
+import { DialogComponent } from './../../../shared/dialog/dialog.component';
+import { DogService } from 'src/app/services/dog.service';
 import { Component, Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import Dog from 'src/app/models/Dog';
 
 
@@ -10,18 +13,27 @@ import Dog from 'src/app/models/Dog';
 })
 export class DogItemComponent {
 
-  @Input() dog: Dog = {
+  @Input() dogItem: Dog = new Dog('');
 
-    name: "",
-      age: 0 ,
-      race: '',
-      gender:'M',
-      imgURL: ''
-    
+  constructor(private dialog: MatDialog, private dogService: DogService){
+
   }
   
   showAlert(msg: string){
     alert(msg)
   }
 
+  editDog(){
+
+    this.dialog.open(DialogComponent, {data:{title:"atualizar cachorro", dog: this.dogItem}}); 
+
+  }
+
+  deleteDog(){
+
+    this.dogService.deleteDog(this.dogItem.id)
+
+  }
 }
+
+
