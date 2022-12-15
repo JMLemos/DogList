@@ -1,18 +1,26 @@
 <mat-card>
     <mat-card-content class="dog-container">
-        <img *ngIf="dog.imgURL" class="dog-img" [src]="dog.imgURL" alt ="">
-        <img *ngIf="!dog.imgURL" class="dog-img" src = "https://www.ferramentastenace.com.br/wp-content/uploads/2017/11/sem-foto.jpg">
-        <span> {{ dog.name }}</span>
+        <img *ngIf="dogItem.imgURL" class="dog-img" [src]="dogItem.imgURL" alt ="">
+        <img *ngIf="!dogItem.imgURL" class="dog-img" src = "https://www.ferramentastenace.com.br/wp-content/uploads/2017/11/sem-foto.jpg">
+        <span> {{ dogItem.name }}</span>
 
-        <mat-expansion-panel hideToggle [genderDirective]="dog.gender">
+        <mat-expansion-panel hideToggle [genderDirective]="dogItem.gender">
             <mat-expansion-panel-header>
               <mat-panel-title>
                 {{"Mais informações  ⏬" | uppercase}}
               </mat-panel-title>
             </mat-expansion-panel-header>
-            <p>Raça: {{dog.race}}</p>
-            <p>Idade: {{dog.age}} ano(s)</p>
-            <p>Sexo: {{dog.gender | gender }}
+            <p>Raça: {{dogItem.breed}}</p>
+            <p>Idade: {{dogItem.age}} ano(s)</p>
+            <p>Sexo: {{dogItem.gender | gender }}
+
+            <div>
+              <button mat-button (click)="editDog()"> EDITAR </button>
+              <button mat-button (click)="deleteDog()"> EXCLUIR </button>
+            </div>
+
+            
+              
           </mat-expansion-panel>
 
 

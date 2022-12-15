@@ -1,0 +1,49 @@
+<div class="container">
+  <form class="dog-form" *ngIf="dogForm" [formGroup]="dogForm" (ngSubmit)="onSubmitForm()">
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="name" required>
+      <mat-error>
+        Nome é obrigatório!
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Raça</mat-label>
+      <input matInput formControlName="breed" required>
+      <mat-error>
+        Raça é obrigatória!
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Idade</mat-label>
+      <input matInput formControlName="age" required>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Gênero</mat-label>
+      <input matInput formControlName="gender" required>
+      <mat-error>
+        Gênero é obrigatório!
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Imagem Url</mat-label>
+      <input matInput formControlName="imgURL" required>
+      <mat-error>
+        URL da imagem é obrigatório!
+      </mat-error>
+    </mat-form-field>
+  
+    <button 
+      class="submit-btn" class = "dog-button" 
+      mat-stroked-button color="primary" 
+      type="submit"
+      [disabled]="!dogForm.valid"
+    >
+      {{ requestType == 'post' ? 'Criar novo' : 'Atualizar'}} cachorro
+    </button>
+  </form>
+</div>

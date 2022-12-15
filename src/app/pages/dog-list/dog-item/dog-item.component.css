@@ -7,6 +7,10 @@
     border: 1px solid rgb(168, 143, 3);
 }
 
+.active{
+    background-color:  rgb(168, 143, 3);
+  }
+
 .dog-img{
     width: 300px;
     height: 200px;
@@ -17,6 +21,8 @@
     font-size:  2em;
     margin: 30px 0px 15px 0px;
 }
+
+
 
 
 
